@@ -33,7 +33,7 @@ h2{margin:0 0 .4rem;font:700 1.5rem/1.2 Pixelify,Atkinson,sans-serif}
 .list li{border-top:2px solid var(--line)}
 .list li:last-child{border-bottom:2px solid var(--line)}
 .row{display:grid;grid-template-columns:3.5rem 1fr auto;gap:1rem 1.4rem;align-items:center;padding:1.3rem .6rem;color:inherit;text-decoration:none}
-.row img{width:3.5rem;height:3.5rem;border-radius:.6rem;background:#fff}
+.row img,.row .tile{width:3.5rem;height:3.5rem;border-radius:.6rem;background:#fff}
 .row b{display:block;font:700 1.5rem/1.2 Pixelify,Atkinson,sans-serif}
 .row span{display:block;color:var(--mute);max-width:36rem}
 .row em{font-style:normal;font-weight:700;color:var(--link);white-space:nowrap}
@@ -80,6 +80,7 @@ html{scroll-behavior:smooth}
 <h2>Projects</h2>
 <ul class="list">
 <li><a class="row" href="skycare/"><img src="skycare-icon.png" alt="" width="56" height="56"><div><b>SkyCare</b><span>Everyday self-care skills in plain words, with a planner and reminders. Android and web.</span></div><em>Open</em></a></li>
+<li><a class="row" href="https://gridshell.theskysanctum.com/"><svg class="tile" width="56" height="56" viewBox="0 0 56 56" aria-hidden="true" shape-rendering="crispEdges"><rect width="56" height="56" rx="9" fill="#0E2236"/><rect x="8" y="8" width="12" height="12" fill="#FFC53D"/><rect x="8" y="22" width="12" height="12" fill="#7CC6EE"/><rect x="8" y="36" width="12" height="12" fill="#7CC6EE"/><rect x="22" y="8" width="12" height="12" fill="#7CC6EE"/><rect x="22" y="22" width="12" height="12" fill="#7CC6EE"/><rect x="22" y="36" width="12" height="12" fill="#7CC6EE"/><rect x="36" y="8" width="12" height="12" fill="#7CC6EE"/><rect x="36" y="22" width="12" height="12" fill="#7CC6EE"/><rect x="36" y="36" width="12" height="12" fill="#7CC6EE"/></svg><div><b>GridShell</b><span>A controller-first launcher, file explorer and download manager that replaces the Windows Start Menu and taskbar.</span></div><em>Open</em></a></li>
 </ul>
 </section>
 <section id="about" class="block">
@@ -90,14 +91,11 @@ html{scroll-behavior:smooth}
 <h2>Links</h2>
 <ul class="links">
 <li><a href="https://github.com/theskysanctum">GitHub</a></li>
-<li><a href="skycare/">SkyCare</a></li>
-<li><a href="skycare/privacy/">SkyCare privacy</a></li>
 </ul>
 </section>
 <section id="contact" class="block">
 <h2>Contact</h2>
-<p>The easiest way to reach me is on <a href="https://github.com/theskysanctum">GitHub</a>. For a problem with SkyCare, open an issue on its repository.</p>
-<ul class="links"><li><a href="https://github.com/theskysanctum/skycare/issues">SkyCare issues</a></li></ul>
+<p>The easiest way to reach me is on <a href="https://github.com/theskysanctum">GitHub</a>.</p>
 </section>
 </div></main>
 <footer><div class="wrap">The Sky Sanctum</div></footer>
