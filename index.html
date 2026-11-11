@@ -4,49 +4,61 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>The Sky Sanctum</title>
-<meta name="description" content="Apps and projects from The Sky Sanctum.">
+<meta name="description" content="Apps and tools from The Sky Sanctum.">
 <link rel="canonical" href="https://theskysanctum.com/">
 <link rel="icon" href="favicon.png">
-<link rel="preload" href="fonts/lexend-latin-800-normal.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="fonts/pixelify-sans-latin-700-normal.woff2" as="font" type="font/woff2" crossorigin>
 <style>
-@font-face{font-family:Lexend;font-weight:400;font-display:swap;src:url(fonts/lexend-latin-400-normal.woff2) format('woff2')}
-@font-face{font-family:Lexend;font-weight:800;font-display:swap;src:url(fonts/lexend-latin-800-normal.woff2) format('woff2')}
-:root{--dusk:#2B2557;--dusk2:#3A3372;--paper:#FCFAFF;--mist:#F4F0FC;--moon:#FFE8A3;--ink:#1E1A33;--mute:#5B5675;--line:#E2DBF3;--link:#4A3AA8}
-@media (prefers-color-scheme:dark){:root{--paper:#17142B;--mist:#1F1A3A;--ink:#EEEAFB;--mute:#B2ABD0;--line:#34305A;--link:#B7A8FF}}
+@font-face{font-family:Pixelify;font-weight:700;font-display:swap;src:url(fonts/pixelify-sans-latin-700-normal.woff2) format('woff2')}
+@font-face{font-family:Atkinson;font-weight:400;font-display:swap;src:url(fonts/atkinson-hyperlegible-latin-400-normal.woff2) format('woff2')}
+@font-face{font-family:Atkinson;font-weight:700;font-display:swap;src:url(fonts/atkinson-hyperlegible-latin-700-normal.woff2) format('woff2')}
+:root{--sky:#7CC6EE;--bg:#F3F9FC;--ink:#0E2236;--mute:#44596C;--cloud:#fff;--line:rgba(14,34,54,.22);--link:#0A5CA8;--sun:#FFC53D;--star:transparent}
+@media (prefers-color-scheme:dark){:root{--sky:#101C3A;--bg:#0A1226;--ink:#E7F1FB;--mute:#9FB3C8;--cloud:#2B3C66;--line:rgba(231,241,251,.22);--link:#8CC8FF;--star:#E7F1FB}}
 *{box-sizing:border-box}
-body{margin:0;background:var(--paper);color:var(--ink);font:400 1.0625rem/1.65 Lexend,system-ui,sans-serif}
-a{color:var(--link);text-underline-offset:.2em}
-:focus-visible{outline:3px solid var(--moon);outline-offset:3px;box-shadow:0 0 0 6px var(--dusk)}
-.wrap{width:min(100% - 2.5rem,56rem);margin-inline:auto}
-header{background:var(--dusk);color:#F4F0FF;position:relative;overflow:hidden;isolation:isolate}
-header::before{content:"";position:absolute;z-index:-1;right:8%;top:50%;width:18rem;height:18rem;margin-top:-9rem;border-radius:50%;
-  background:radial-gradient(circle at 70% 40%,var(--moon) 0 58%,transparent 58.4%);
-  -webkit-mask:radial-gradient(circle at 36% 46%,transparent 0 62%,#000 62.5%);mask:radial-gradient(circle at 36% 46%,transparent 0 62%,#000 62.5%);opacity:.95}
-header .wrap{padding:5.5rem 0 5rem}
-h1{margin:0;font-weight:800;font-size:clamp(2.6rem,8vw,4.8rem);line-height:1.05;letter-spacing:-.02em}
-header p{margin:1.2rem 0 0;font-size:1.25rem;color:#E4DEFA;max-width:26rem}
-main{padding:4rem 0 5rem}
-h2{margin:0 0 1.4rem;font-weight:800;font-size:1.7rem;letter-spacing:-.02em}
-.proj{display:grid;grid-template-columns:auto 1fr;gap:1.2rem 1.4rem;align-items:center;padding:1.4rem;border:2px solid var(--line);border-radius:18px;background:var(--mist);color:inherit;text-decoration:none;transition:border-color .2s,transform .2s}
-.proj:hover{border-color:var(--link);transform:translateY(-2px)}
-.proj img{width:72px;height:72px;border-radius:18px;background:#fff}
-.proj h3{margin:0;font-size:1.3rem;font-weight:800;letter-spacing:-.01em}
-.proj p{margin:.25rem 0 0;color:var(--mute)}
-@media (prefers-reduced-motion:reduce){*{transition:none!important}}
-footer{border-top:1px solid var(--line);padding:1.6rem 0;color:var(--mute);font-size:.95rem}
+html{background:var(--bg)}
+body{margin:0;color:var(--ink);font:400 1.125rem/1.6 Atkinson,system-ui,sans-serif;background:var(--bg)}
+a{color:var(--link)}
+:focus-visible{outline:3px solid var(--sun);outline-offset:3px}
+.wrap{width:min(100% - 2.5rem,58rem);margin-inline:auto}
+.sky{position:relative;overflow:hidden;min-height:min(78vh,38rem);display:flex;align-items:flex-end;background:linear-gradient(var(--sky),var(--bg) 96%)}
+.sky::before{content:"";position:absolute;left:0;top:0;width:4px;height:4px;box-shadow:6vw 5vh var(--star),22vw 12vh var(--star),38vw 4vh var(--star),55vw 9vh var(--star),71vw 3vh var(--star),88vw 11vh var(--star),14vw 24vh var(--star),47vw 21vh var(--star),79vw 26vh var(--star),94vw 19vh var(--star),30vw 33vh var(--star),63vw 31vh var(--star)}
+.cloud{position:absolute;left:0;fill:var(--cloud);opacity:.95;transform:translateX(-30vw) scale(var(--s));transform-origin:left top;animation:drift var(--t) linear var(--d) infinite}
+@keyframes drift{to{transform:translateX(130vw) scale(var(--s))}}
+.sky .wrap{position:relative;padding:0 0 3.2rem}
+h1{margin:0;font:700 clamp(3rem,11vw,7.5rem)/.95 Pixelify,Atkinson,sans-serif;letter-spacing:0;text-wrap:balance;max-width:11ch}
+.sky p{margin:1.4rem 0 0;font-size:1.25rem;color:var(--ink);max-width:24rem}
+main{padding:2.5rem 0 4rem}
+h2{margin:0 0 .4rem;font:700 1.5rem/1.2 Pixelify,Atkinson,sans-serif}
+.list{list-style:none;margin:0;padding:0}
+.list li{border-top:2px solid var(--line)}
+.list li:last-child{border-bottom:2px solid var(--line)}
+.row{display:grid;grid-template-columns:3.5rem 1fr auto;gap:1rem 1.4rem;align-items:center;padding:1.3rem .6rem;color:inherit;text-decoration:none}
+.row img{width:3.5rem;height:3.5rem;border-radius:.6rem;background:#fff}
+.row b{display:block;font:700 1.5rem/1.2 Pixelify,Atkinson,sans-serif}
+.row span{display:block;color:var(--mute);max-width:36rem}
+.row em{font-style:normal;font-weight:700;color:var(--link);white-space:nowrap}
+.row:hover b{text-decoration:underline;text-decoration-thickness:3px;text-underline-offset:.2em;text-decoration-color:var(--sun)}
+@media (max-width:34rem){.row{grid-template-columns:3.5rem 1fr}.row em{grid-column:2}}
+footer{padding:0 0 2.5rem;color:var(--mute);font-size:.95rem}
+@media (prefers-reduced-motion:reduce){.cloud{animation:none;transform:translateX(var(--x,8vw)) scale(var(--s))}.c2{--x:60vw}.c3{--x:35vw}.c4{--x:80vw}}
 </style>
 </head>
 <body>
-<header><div class="wrap">
+<header class="sky">
+<svg class="cloud c1" style="top:14%;--s:1.5;--t:140s;--d:-30s" width="160" height="48" viewBox="0 0 160 48" aria-hidden="true" shape-rendering="crispEdges"><path d="M48 0h32v8h-32zM32 8h64v8h-64zM112 8h24v8h-24zM16 16h96v8h-96zM120 16h32v8h-32zM8 24h152v8h-152zM0 32h160v8h-160zM0 40h160v8h-160z"/></svg>
+<svg class="cloud c2" style="top:30%;--s:1;--t:110s;--d:-80s" width="96" height="32" viewBox="0 0 96 32" aria-hidden="true" shape-rendering="crispEdges"><path d="M32 0h32v8h-32zM16 8h64v8h-64zM0 16h96v8h-96zM0 24h96v8h-96z"/></svg>
+<svg class="cloud c3" style="top:52%;--s:2.2;--t:180s;--d:-120s" width="160" height="48" viewBox="0 0 160 48" aria-hidden="true" shape-rendering="crispEdges"><path d="M48 0h32v8h-32zM32 8h64v8h-64zM112 8h24v8h-24zM16 16h96v8h-96zM120 16h32v8h-32zM8 24h152v8h-152zM0 32h160v8h-160zM0 40h160v8h-160z"/></svg>
+<svg class="cloud c4" style="top:8%;--s:1.2;--t:95s;--d:-10s" width="96" height="32" viewBox="0 0 96 32" aria-hidden="true" shape-rendering="crispEdges"><path d="M32 0h32v8h-32zM16 8h64v8h-64zM0 16h96v8h-96zM0 24h96v8h-96z"/></svg>
+<div class="wrap">
 <h1>The Sky Sanctum</h1>
 <p>Apps and tools, made one at a time.</p>
-</div></header>
+</div>
+</header>
 <main><div class="wrap">
 <h2>Projects</h2>
-<a class="proj" href="skycare/">
-<img src="favicon.png" alt="" width="72" height="72">
-<div><h3>SkyCare</h3><p>Teaches everyday self-care skills in plain words and helps you keep up with them. Android app and web app.</p></div>
-</a>
+<ul class="list">
+<li><a class="row" href="skycare/"><img src="favicon.png" alt="" width="56" height="56"><div><b>SkyCare</b><span>Everyday self-care skills in plain words, with a planner and reminders. Android and web.</span></div><em>Open</em></a></li>
+</ul>
 </div></main>
 <footer><div class="wrap">The Sky Sanctum</div></footer>
 </body>
