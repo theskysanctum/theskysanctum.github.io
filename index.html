@@ -40,11 +40,32 @@ h2{margin:0 0 .4rem;font:700 1.5rem/1.2 Pixelify,Atkinson,sans-serif}
 .row:hover b{text-decoration:underline;text-decoration-thickness:3px;text-underline-offset:.2em;text-decoration-color:var(--sun)}
 @media (max-width:34rem){.row{grid-template-columns:3.5rem 1fr}.row em{grid-column:2}}
 footer{padding:0 0 2.5rem;color:var(--mute);font-size:.95rem}
-@media (prefers-reduced-motion:reduce){.cloud{animation:none;transform:translateX(var(--x,8vw)) scale(var(--s))}.c2{--x:60vw}.c3{--x:35vw}.c4{--x:80vw}}
+.bar{position:sticky;top:0;z-index:10;background:color-mix(in srgb,var(--bg) 88%,transparent);-webkit-backdrop-filter:blur(8px);backdrop-filter:blur(8px);border-bottom:2px solid var(--line)}
+.bar .wrap{display:flex;align-items:center;gap:.4rem 1.6rem;flex-wrap:wrap;padding:.7rem 0}
+.mark{font:700 1.25rem/1 Pixelify,Atkinson,sans-serif;color:var(--ink);text-decoration:none;margin-right:auto}
+.bar nav{display:flex;gap:.2rem 1.3rem;flex-wrap:wrap}
+.bar nav a{color:var(--ink);font-weight:700;text-decoration:none;padding:.35rem 0;border-bottom:3px solid transparent}
+.bar nav a:hover,.bar nav a:focus-visible{border-color:var(--sun)}
+section[id]{scroll-margin-top:5rem}
+.block{padding:2.2rem 0 0}
+.block p{margin:.6rem 0 0;max-width:38rem}
+.links{list-style:none;margin:.8rem 0 0;padding:0;display:flex;gap:.6rem 1.4rem;flex-wrap:wrap}
+.links a{font-weight:700}
+html{scroll-behavior:smooth}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}.cloud{animation:none;transform:translateX(var(--x,8vw)) scale(var(--s))}.c2{--x:60vw}.c3{--x:35vw}.c4{--x:80vw}}
 </style>
 </head>
 <body>
-<header class="sky">
+<div class="bar"><div class="wrap">
+<a class="mark" href="#top">The Sky Sanctum</a>
+<nav aria-label="Main">
+<a href="#projects">Projects</a>
+<a href="#about">About</a>
+<a href="#links">Links</a>
+<a href="#contact">Contact</a>
+</nav>
+</div></div>
+<header class="sky" id="top">
 <svg class="cloud c1" style="top:14%;--s:1.5;--t:140s;--d:-30s" width="160" height="48" viewBox="0 0 160 48" aria-hidden="true" shape-rendering="crispEdges"><path d="M48 0h32v8h-32zM32 8h64v8h-64zM112 8h24v8h-24zM16 16h96v8h-96zM120 16h32v8h-32zM8 24h152v8h-152zM0 32h160v8h-160zM0 40h160v8h-160z"/></svg>
 <svg class="cloud c2" style="top:30%;--s:1;--t:110s;--d:-80s" width="96" height="32" viewBox="0 0 96 32" aria-hidden="true" shape-rendering="crispEdges"><path d="M32 0h32v8h-32zM16 8h64v8h-64zM0 16h96v8h-96zM0 24h96v8h-96z"/></svg>
 <svg class="cloud c3" style="top:52%;--s:2.2;--t:180s;--d:-120s" width="160" height="48" viewBox="0 0 160 48" aria-hidden="true" shape-rendering="crispEdges"><path d="M48 0h32v8h-32zM32 8h64v8h-64zM112 8h24v8h-24zM16 16h96v8h-96zM120 16h32v8h-32zM8 24h152v8h-152zM0 32h160v8h-160zM0 40h160v8h-160z"/></svg>
@@ -55,10 +76,29 @@ footer{padding:0 0 2.5rem;color:var(--mute);font-size:.95rem}
 </div>
 </header>
 <main><div class="wrap">
+<section id="projects">
 <h2>Projects</h2>
 <ul class="list">
 <li><a class="row" href="skycare/"><img src="skycare-icon.png" alt="" width="56" height="56"><div><b>SkyCare</b><span>Everyday self-care skills in plain words, with a planner and reminders. Android and web.</span></div><em>Open</em></a></li>
 </ul>
+</section>
+<section id="about" class="block">
+<h2>About</h2>
+<p>I build apps and tools on my own, one at a time. I am self-taught and work in Python, bash, and C. I also make pixel art and music.</p>
+</section>
+<section id="links" class="block">
+<h2>Links</h2>
+<ul class="links">
+<li><a href="https://github.com/theskysanctum">GitHub</a></li>
+<li><a href="skycare/">SkyCare</a></li>
+<li><a href="skycare/privacy/">SkyCare privacy</a></li>
+</ul>
+</section>
+<section id="contact" class="block">
+<h2>Contact</h2>
+<p>The easiest way to reach me is on <a href="https://github.com/theskysanctum">GitHub</a>. For a problem with SkyCare, open an issue on its repository.</p>
+<ul class="links"><li><a href="https://github.com/theskysanctum/skycare/issues">SkyCare issues</a></li></ul>
+</section>
 </div></main>
 <footer><div class="wrap">The Sky Sanctum</div></footer>
 </body>
