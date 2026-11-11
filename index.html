@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>The Sky Sanctum</title>
+<meta name="description" content="Apps and projects from The Sky Sanctum.">
+<link rel="canonical" href="https://theskysanctum.com/">
+<link rel="icon" href="favicon.png">
+<link rel="preload" href="fonts/lexend-latin-800-normal.woff2" as="font" type="font/woff2" crossorigin>
+<style>
+@font-face{font-family:Lexend;font-weight:400;font-display:swap;src:url(fonts/lexend-latin-400-normal.woff2) format('woff2')}
+@font-face{font-family:Lexend;font-weight:800;font-display:swap;src:url(fonts/lexend-latin-800-normal.woff2) format('woff2')}
+:root{--dusk:#2B2557;--dusk2:#3A3372;--paper:#FCFAFF;--mist:#F4F0FC;--moon:#FFE8A3;--ink:#1E1A33;--mute:#5B5675;--line:#E2DBF3;--link:#4A3AA8}
+@media (prefers-color-scheme:dark){:root{--paper:#17142B;--mist:#1F1A3A;--ink:#EEEAFB;--mute:#B2ABD0;--line:#34305A;--link:#B7A8FF}}
+*{box-sizing:border-box}
+body{margin:0;background:var(--paper);color:var(--ink);font:400 1.0625rem/1.65 Lexend,system-ui,sans-serif}
+a{color:var(--link);text-underline-offset:.2em}
+:focus-visible{outline:3px solid var(--moon);outline-offset:3px;box-shadow:0 0 0 6px var(--dusk)}
+.wrap{width:min(100% - 2.5rem,56rem);margin-inline:auto}
+header{background:var(--dusk);color:#F4F0FF;position:relative;overflow:hidden;isolation:isolate}
+header::before{content:"";position:absolute;z-index:-1;right:8%;top:50%;width:18rem;height:18rem;margin-top:-9rem;border-radius:50%;
+  background:radial-gradient(circle at 70% 40%,var(--moon) 0 58%,transparent 58.4%);
+  -webkit-mask:radial-gradient(circle at 36% 46%,transparent 0 62%,#000 62.5%);mask:radial-gradient(circle at 36% 46%,transparent 0 62%,#000 62.5%);opacity:.95}
+header .wrap{padding:5.5rem 0 5rem}
+h1{margin:0;font-weight:800;font-size:clamp(2.6rem,8vw,4.8rem);line-height:1.05;letter-spacing:-.02em}
+header p{margin:1.2rem 0 0;font-size:1.25rem;color:#E4DEFA;max-width:26rem}
+main{padding:4rem 0 5rem}
+h2{margin:0 0 1.4rem;font-weight:800;font-size:1.7rem;letter-spacing:-.02em}
+.proj{display:grid;grid-template-columns:auto 1fr;gap:1.2rem 1.4rem;align-items:center;padding:1.4rem;border:2px solid var(--line);border-radius:18px;background:var(--mist);color:inherit;text-decoration:none;transition:border-color .2s,transform .2s}
+.proj:hover{border-color:var(--link);transform:translateY(-2px)}
+.proj img{width:72px;height:72px;border-radius:18px;background:#fff}
+.proj h3{margin:0;font-size:1.3rem;font-weight:800;letter-spacing:-.01em}
+.proj p{margin:.25rem 0 0;color:var(--mute)}
+@media (prefers-reduced-motion:reduce){*{transition:none!important}}
+footer{border-top:1px solid var(--line);padding:1.6rem 0;color:var(--mute);font-size:.95rem}
+</style>
+</head>
+<body>
+<header><div class="wrap">
+<h1>The Sky Sanctum</h1>
+<p>Apps and tools, made one at a time.</p>
+</div></header>
+<main><div class="wrap">
+<h2>Projects</h2>
+<a class="proj" href="skycare/">
+<img src="favicon.png" alt="" width="72" height="72">
+<div><h3>SkyCare</h3><p>Teaches everyday self-care skills in plain words and helps you keep up with them. Android app and web app.</p></div>
+</a>
+</div></main>
+<footer><div class="wrap">The Sky Sanctum</div></footer>
+</body>
+</html>
